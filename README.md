@@ -1,7 +1,8 @@
 
-#Jenkins Jobs - Seed
+# Jenkins Jobs - Seed
+oleh Estu Fardani
 
-Proyek Dokumentasi| https://tuanpembual.wordpress.com/2017/02/07/devops-jenkins-pengantar-lain/A
+Proyek Dokumentasi| https://tuanpembual.wordpress.com/2017/02/07/devops-jenkins-pengantar-lain/
 
 ## Pipelines
 
