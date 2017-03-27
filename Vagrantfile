@@ -1,10 +1,7 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/xenial64"
-  #config.vm.box = "ubuntu/trusty64"
-  #config.vm.box = "debian/jessie64"
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "1024"
-    #vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
 
   config.vm.define :jenkins do |jenkins|
@@ -28,7 +25,7 @@ Vagrant.configure(2) do |config|
     worker.vm.provision "shell", inline: <<-SHELL
       sudo apt-get update
       sudo apt-get install -y default-jre git default-jdk ntp unzip
-    SHELL
+    SHELLz
     # download jar
   end
 end
