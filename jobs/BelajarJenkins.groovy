@@ -4,23 +4,33 @@ folder("${app}") {
   description "ini adalah description"
 }
 
-job("${app}/BuildGradle") {
+job("${app}/BuildNPM") {
     description "Coba build gradle"
     logRotator {
         daysToKeep(7)
         numToKeep(10)
+    }
+    scm {
+        git {
+            remote {
+                url('https://github.com/tuanpembual/blankon-linux-static-web.git')
+            }
+            branch('master')
+        }
     }
     triggers {
         scm('H/2 * * * *')
     } 
 
     steps {
-        gradle {
-            tasks('clean test')
-        }
+     	shell('''npm install
+npm run build
+tar -czvf dist.tar.gz dist''')   
     }
-
-    publishers {
-        mailer('mail@example.com', false, true)
+    publishers{
+	archiveArtifacts {
+            pattern("dist.tar.gz")
+            onlyIfSuccessful()
+        }
     }
 }
