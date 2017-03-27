@@ -35,3 +35,23 @@ echo "sukses"''')
         }
     }
 }
+
+job("${app}/slavejobs") {
+    description "Coba build gradle"
+    label("slave")
+    logRotator {
+        daysToKeep(7)
+        numToKeep(10)
+    }
+    scm {
+        git {
+            remote {
+                url('https://github.com/tuanpembual/blankon-linux-static-web.git')
+            }
+            branch('master')
+        }
+    }
+    steps {
+        shell('echo "sukses dari slave"')   
+    }
+}
