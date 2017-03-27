@@ -1,4 +1,4 @@
-String app = "BelajarJenkins"
+String app = "Btech"
 
 folder("${app}") {
   description "ini adalah description"
@@ -25,7 +25,8 @@ job("${app}/BuildNPM") {
     steps {
      	shell('''npm install
 npm run build
-tar -czvf dist.tar.gz dist''')   
+tar -czvf dist.tar.gz dist
+echo "sukses"''')   
     }
     publishers{
 	archiveArtifacts {
