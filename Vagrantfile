@@ -22,10 +22,10 @@ Vagrant.configure(2) do |config|
     worker.vm.host_name="worker"
     worker.vm.network "private_network", ip: "192.168.33.15"
     
-    worker.vm.provision "shell", inline: <<-SHELL
-      sudo apt-get update
-      sudo apt-get install -y default-jre git default-jdk ntp unzip
-    SHELLz
+    # worker.vm.provision "shell", inline: <<-SHELL
+    #   sudo apt-get update
+    #   sudo apt-get install -y default-jre git default-jdk ntp unzip
+    # SHELL
     # download jar
   end
 end
